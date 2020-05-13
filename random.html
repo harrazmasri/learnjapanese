@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-------------------------------------- Hot HTML Head ------------------------------------------->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Table hiragana</title>
+        <!------------------------------------- CSS sheesh ----------------------------------------->
+            <style>
+                * {
+                    margin: 0; color: rgb(40,40,40); text-decoration: none; font-size: 30px;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                }
+                    .menu {
+                        display: flex; flex-direction: row; justify-content: center; margin-top: 1%;
+                    }
+                    .menu , a {
+                        font-size: 12px; margin-left: 2%; margin-right: 2%;
+                    }
+
+
+            </style>
+    </head>
+
+    <!-------------------------------------- Hot HTML Bod ------------------------------------------->
+    <body>
+        <center>
+            <div class="menu">
+                <a href="index.html">HOME</a>
+                <a href="table.html">TABLE</a>
+                <a href="random.html">RANDOM</a>
+            </div>
+
+            <div>
+                <p id="japanletter"></p>
+                <p id="input" contenteditable="true">answer please</p>
+            </div>
+        </center>
+
+        <script>
+            // randomize the letter
+            function randomize() {
+                var random = Math.floor(Math.random() * 46) + 1 ;  // output will 1-46 because hiragana table has 46 chars
+                // process randomizer for letter
+                if (random = 1) {
+                    document.getElementById('japanletter').innerHTML = "あ";
+                }
+                else if (random = 2) {
+                    document.getElementById('japanletter').innerHTML = "い";
+                }
+                else if (random = 3) {
+                    document.getElementById('japanletter').innerHTML = "う";
+                }
+                else if (random = 4) {
+                    document.getElementById('japanletter').innerHTML = "え";
+                }
+                else if (random = 5) {
+                    document.getElementById('japanletter').innerHTML = "お";
+                }
+            }
+            // receive input
+            // process input
+            // show result
+            // get rara here, hahaha joke just go on to the next letter
+        </script>
+    </body>
+</html>
