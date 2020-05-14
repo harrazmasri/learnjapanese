@@ -17,7 +17,9 @@
                     .menu , a {
                         font-size: 12px; margin-left: 2%; margin-right: 2%;
                     }
-
+                #container {
+                    margin-top: 10%;
+                }
 
             </style>
     </head>
@@ -31,37 +33,173 @@
                 <a href="random.html">RANDOM</a>
             </div>
 
-            <div>
-                <p id="japanletter"></p>
-                <p id="input" contenteditable="true">answer please</p>
+            <div id="container">
+                <p id="japanletter">letter</p>
+                <input id="input"></input>
+                <p onclick='run()' style="cursor:pointer;padding:10px;background-color:#eee;width:50px;margin:1%;font-size:12px;">check</p>
+                <p id="status">status</p>
             </div>
         </center>
 
         <script>
+            var random = Math.floor(Math.random() * 2) + 1 , letter = "" , input = "";  // output will 1-46 because hiragana table has 46 chars
+
             // randomize the letter
-            function randomize() {
-                var random = Math.floor(Math.random() * 46) + 1 ;  // output will 1-46 because hiragana table has 46 chars
-                // process randomizer for letter
-                if (random = 1) {
-                    document.getElementById('japanletter').innerHTML = "あ";
+            function randomize() {   
+
+            // process randomizer for letter
+            if (random == 1) {
+                    letter = "あ";
                 }
-                else if (random = 2) {
-                    document.getElementById('japanletter').innerHTML = "い";
+                else if (random == 2) {
+                    letter = "い";
                 }
-                else if (random = 3) {
-                    document.getElementById('japanletter').innerHTML = "う";
+                else if (random == 3) {
+                    letter = "う";
                 }
-                else if (random = 4) {
-                    document.getElementById('japanletter').innerHTML = "え";
+                else if (random == 4) {
+                    letter = "え";
                 }
-                else if (random = 5) {
-                    document.getElementById('japanletter').innerHTML = "お";
+                else if (random == 5) {
+                    letter = "お";
+                } 
+                else if (random = 11) {
+                    letter = "さ";
                 }
-            }
-            // receive input
-            // process input
-            // show result
-            // get rara here, hahaha joke just go on to the next letter
+                else if (random = 12) {
+                    letter = "し";
+                }
+                else if (random = 13) {
+                    letter = "す";
+                }
+                else if (random = 14) {
+                    letter = "せ";
+                }
+                else if (random = 15) {
+                    letter = "そ";
+                }
+                else if (random = 16) {
+                    letter = "た";
+                }
+                else if (random = 17) {
+                    letter = "ち";
+                }
+                else if (random = 18) {
+                    letter = "つ";
+                }
+                else if (random = 19) {
+                    letter = "て";
+                }
+                else if (random = 20) {
+                    letter = "と";
+                }
+                else if (random = 21) {
+                    letter = "な";
+                }
+                else if (random = 22) {
+                    letter = "に";
+                }
+                else if (random = 23) {
+                    letter = "ぬ";
+                }
+                else if (random = 24) {
+                    letter = "ね";
+                }
+                else if (random = 25) {
+                    letter = "の";
+                }
+                else if (random = 26) {
+                    letter = "は";
+                }
+                else if (random = 27) {
+                    letter = "ひ";
+                }
+                else if (random = 28) {
+                    letter = "ふ";
+                }
+                else if (random = 29) {
+                    letter = "へ";
+                }
+                else if (random = 30) {
+                    letter = "ほ";
+                }
+                else if (random = 31) {
+                    letter = "ま";
+                }
+                else if (random = 32) {
+                    letter = "み";
+                }
+                else if (random = 33) {
+                    letter = "む";
+                }
+                else if (random = 34) {
+                    letter = "め";
+                }
+                else if (random = 35) {
+                    letter = "も";
+                }
+                else if (random = 36) {
+                    letter = "や";
+                }
+                else if (random = 37) {
+                    letter = "ゆ";
+                }
+                else if (random = 38) {
+                    letter = "よ";
+                }
+                else if (random = 39) {
+                    letter = "ら";
+                }
+                else if (random = 40) {
+                    letter = "り";
+                }
+                else if (random = 41) {
+                    letter = "る";
+                }
+                else if (random = 42) {
+                    letter = "れ";
+                }
+                else if (random = 43) {
+                    letter = "ろ";
+                }
+                else if (random = 44) {
+                    letter = "わ";
+                }
+                else if (random = 45) {
+                    letter = "を";
+                }
+                else {
+                    letter = "ｎ";
+                }
+
+                // output random letters
+                document.getElementById('japanletter').innerHTML = letter;
+
+                }
+
+                // onblur get value from input
+                function run() {
+                    // get value in input
+                    input = document.getElementById('input').value;
+                    compare();
+                }
+
+                // function compare letter and input
+                function compare() {
+                    debugger;
+                    // if input equivalent letter
+                    if (input == letter) {
+                        // output them and direct to return randomize
+                        document.getElementById('status').innerHTML = "correct";
+                    }
+                    else {  
+                        document.getElementById('status').innerHTML = "incorrect";
+                    }
+                }
+
+            // call out function
+            randomize();
+
         </script>
     </body>
 </html>
